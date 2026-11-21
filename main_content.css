@@ -17,8 +17,7 @@
     color: #f8ecff;
     border-radius: 25px;
     border: 2px solid #e6d6f7;
-    overflow: hidden;
-    /* box-shadow: 10px 10px 5px #e6d6f7; */
+    text-wrap: wrap;
 }
 
 .card_buttons {

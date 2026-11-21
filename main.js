@@ -110,17 +110,19 @@ function displayBook() {
 }
 
 submitBtn.addEventListener('click', function(e) {
-    if (book_name.value.length > 10) {
-        alert("Name of The Book Cannot Exceed 10 Characters");
+    if (book_name.value.length > 20) {
+        alert("Name of the book cannot exceed 20 characters!");
         book_name.value = "";
+    } else if(book_name.value == "" || book_name.value == null) {
+        alert("Name of the book is required!");
+    } else {
+        addBookToLibrary(book_name.value, author_name.value, publication_year.value, current_status.value, self.crypto.randomUUID());
+        displayBook();
     }
-    addBookToLibrary(book_name.value, author_name.value, publication_year.value, current_status.value, self.crypto.randomUUID());
-    displayBook();
     e.preventDefault();
 });
 
 closeBtn.addEventListener('click', function(e) {
-    console.log(book_name.value.length);
     dialog.close();
     form.reset();
 })
