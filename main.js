@@ -110,12 +110,17 @@ function displayBook() {
 }
 
 submitBtn.addEventListener('click', function(e) {
+    if (book_name.value.length > 10) {
+        alert("Name of The Book Cannot Exceed 10 Characters");
+        book_name.value = "";
+    }
     addBookToLibrary(book_name.value, author_name.value, publication_year.value, current_status.value, self.crypto.randomUUID());
     displayBook();
     e.preventDefault();
 });
 
 closeBtn.addEventListener('click', function(e) {
+    console.log(book_name.value.length);
     dialog.close();
     form.reset();
 })
